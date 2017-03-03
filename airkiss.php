@@ -1,6 +1,6 @@
 <?php
 require_once "jssdk.php";
-$jssdk = new JSSDK("wx5de1ab48fc31328f", "5bccc90e29a6dbfa5cf795bb88477d22");
+$jssdk = new JSSDK("wx49504f1f16265350", "47023108954c24e755331a5da6605490");
 $signPackage = $jssdk->GetSignPackage();
 ?>
 <!DOCTYPE html>

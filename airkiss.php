@@ -41,7 +41,6 @@ $signPackage = $jssdk->GetSignPackage();
   };
 wx.config(config);
 wx.ready(function() {
-  alert(config.timestamp+" "+config.appId+" "+config.nonceStr+" "+config.signature);
   $(".connectWifi").click(function(){
     wx.invoke('configWXDeviceWiFi', {}, function(res) {
       if (res.err_msg == 'configWXDeviceWiFi:ok') {

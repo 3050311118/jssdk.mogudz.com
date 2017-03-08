@@ -28,7 +28,7 @@ $signPackage = $jssdk->GetSignPackage();
       <button class="btn btn_primary" id="startRecord">开始</button>
 </body>
 <script>
-  wx.config({
+  var config={
     beta: true,
     // debug: true,
     appId: '<?php echo $signPackage["appId"];?>',
@@ -38,7 +38,8 @@ $signPackage = $jssdk->GetSignPackage();
   jsApiList: [
     'configWXDeviceWiFi',
     ]
-  });
+  };
+wx.config(config);
 wx.ready(function() {
   $(".connectWifi").click(function(){
     wx.invoke('configWXDeviceWiFi', {}, function(res) {

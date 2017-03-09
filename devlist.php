@@ -121,9 +121,9 @@
 	mqtt();
       	this.items=[];      	
         setTimeout(() => {
-          this.$refs.my_scroller.finishPullToRefresh();
-	  
-        }, 1500)
+          this.$refs.my_scroller.finishPullToRefresh();	  
+	  location.reload();	
+        }, 3000)
       }
     }
   });

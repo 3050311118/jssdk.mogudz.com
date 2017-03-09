@@ -76,7 +76,7 @@
 	function mqtt(){ 
 	    try 
 	    {
-	        client = new Paho.MQTT.Client("www.mogudz.com", 8083, "WEB"+userid);//location.hostname
+	        client = new Paho.MQTT.Client(location.hostname, 8083, "WEB"+userid);//
 	        client.onConnectionLost = onConnectionLost;
 	        client.onMessageArrived = onMessageArrived;
 	        client.connect({onSuccess:onConnect});
@@ -118,11 +118,11 @@
     },
     methods: {
       refresh: function () {
-	alert("ok");
 	mqtt();
       	this.items=[];      	
         setTimeout(() => {
           this.$refs.my_scroller.finishPullToRefresh();
+	  
         }, 1500)
       }
     }

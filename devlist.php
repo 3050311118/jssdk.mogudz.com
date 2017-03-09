@@ -93,9 +93,10 @@
 	            var str=message.payloadString;
 	            try{
 	            	var json=JSON.parse(str);
-			for(var item in app.items){
-				if(json.sn == item.sn) return;
-			}	
+			    for(var i = 0; i < app.items.length; i++)
+			    {
+				if(app.items[i].sn == json.sn) return;
+			    }   
 	            	app.items.push(json);
 			    alert(str);
 	            }catch(e){

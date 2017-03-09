@@ -68,7 +68,7 @@
 	var userid="<?php echo $_GET["id"];?>";
 	function pub()
 	{
-		alert(userid);
+		alert("user"+userid);
 	    message = new Paho.MQTT.Message('{"action":"GETONLINE"}');
 	    message.destinationName = userid+"/SUB";
 	    client.send(message);  
@@ -77,7 +77,6 @@
 	function mqtt(){ 
 	    try 
 	    {
-		
 	        client = new Paho.MQTT.Client("www.mogudz.com", 8083, "WEB"+userid);//location.hostname
 	        client.onConnectionLost = onConnectionLost;
 	        client.onMessageArrived = onMessageArrived;

@@ -99,7 +99,7 @@
 	    }catch(e){
 	    }
 	}
-window.onload=function(){
+window.ready=function(){
   var app=new Vue({
     el: '#app',
     components: {

@@ -70,7 +70,8 @@
 
 	function mqtt(){ 
 	    try 
-	    {
+	    {	
+		    alert("mqttttt");
 	        client = new Paho.MQTT.Client(location.hostname, 8083, "WEB"+userid);//
 	        client.onConnectionLost = onConnectionLost;
 	        client.onMessageArrived = onMessageArrived;
@@ -94,6 +95,7 @@
 	            }
 	        };  
 	    }catch(e){
+		 alert("err");
 	    }
 	}
   var app=new Vue({

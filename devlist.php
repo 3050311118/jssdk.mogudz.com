@@ -99,7 +99,6 @@
 	    }catch(e){
 	    }
 	}
-window.onready=function(){
   var app=new Vue({
     el: '#app',
     components: {
@@ -111,7 +110,7 @@ window.onready=function(){
     mounted: function () {
       mqtt(); 
       setInterval(function(){
-	 if(isConnected==2) mqtt();
+	 mqtt();
       },5000);
       setTimeout(() => {
         this.$refs.my_scroller.resize();
@@ -126,7 +125,7 @@ window.onready=function(){
         }, 1500)
       }
     }
-  });}
+  });
 </script>
 </body>
 </html>

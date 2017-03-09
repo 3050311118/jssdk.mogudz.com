@@ -69,14 +69,14 @@
  	var userid="<?php echo $_GET["id"];?>";
 	
 	function pub(){
-		message = new Paho.MQTT.Message('{"action":"GETONLINE"}');
-		message.destinationName = userid+"/SUB";
 		client.send(message);  
 	}
 
 	function mqtt(){ 
 	    try 
 	    {	
+		message = new Paho.MQTT.Message('{"action":"GETONLINE"}');
+		message.destinationName = userid+"/SUB";
 	        client = new Paho.MQTT.Client(location.hostname, 8083, "WEB"+userid);//
 	        client.onConnectionLost = onConnectionLost;
 	        client.onMessageArrived = onMessageArrived;
@@ -110,9 +110,9 @@
     },
     mounted: function () {
       mqtt(); 
-      setInterval(function(){
-	 if(isConnected===2)mqtt();
-      },5000);
+//       setInterval(function(){
+// 	 if(isConnected===2)mqtt();
+//       },5000);
       setTimeout(() => {
         this.$refs.my_scroller.resize();
       })

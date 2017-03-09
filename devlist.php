@@ -54,7 +54,7 @@
   <div class="header">
     <h1 class="title">下拉刷新列表</h1>
   </div>
-  <scroller :on-refresh="refresh"
+  <scroller :
             ref="my_scroller" style="top: 44px;">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
     	<div v-if="index==0">点击打开设备页面</div>

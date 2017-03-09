@@ -110,7 +110,7 @@
     mounted: function () {
       mqtt(); 
       setInterval(function(){
-	 mqtt();
+	 if(isConnected===2)mqtt();
       },5000);
       setTimeout(() => {
         this.$refs.my_scroller.resize();
@@ -118,6 +118,7 @@
     },
     methods: {
       refresh: function () {
+	alert("ok");
 	mqtt();
       	this.items=[];      	
         setTimeout(() => {

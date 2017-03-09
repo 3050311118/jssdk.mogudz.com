@@ -123,6 +123,7 @@
 	   window.location.href="/devinfo.php?id="+index;
       },
       refresh: function () {
+	this.items=[];
 	this.items[0]={"sn":"","nickname":""};
         pub();             	
         setTimeout(() => {

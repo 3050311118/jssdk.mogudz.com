@@ -75,6 +75,7 @@
 	function mqtt(){ 
 	    try 
 	    {
+		alert(userid);
 	        client = new Paho.MQTT.Client("www.mogudz.com", 8083, "WEB"+userid);//location.hostname
 	        client.onConnectionLost = onConnectionLost;
 	        client.onMessageArrived = onMessageArrived;

@@ -115,7 +115,7 @@
     },
     methods: {
       mqttload:function(){
-       alert("mqttload");
+       mqtt();
       },
       refresh: function () {
 	mqtt();

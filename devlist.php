@@ -94,7 +94,7 @@
 	            try{
 	            	var json=JSON.parse(str);
 			for(var item in app.items){
-				if(json.sn === item.sn) return;
+				if(json.sn == item.sn) return;
 			}	
 	            	app.items.push(json);
 			    alert(str);

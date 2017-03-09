@@ -58,8 +58,8 @@
             ref="my_scroller" style="top: 44px;">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
     	<div v-if="index==0">点击打开设备页面</div>
-		<div v-else>序列号{{item.sn}} 设备名{{item.nickname}}</div>
-    </div>
+		<div onclick="window.open('http://www.baidu.com')" v-else>序列号{{item.sn}} 设备名{{item.nickname}}</div>
+        </div>
   </scroller>
 </div>
 <script>

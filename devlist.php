@@ -105,7 +105,7 @@
       Scroller
     },
     data: {
-	    items: []
+      items: []
     },
     mounted: function () {
       mqtt(); 
@@ -122,7 +122,7 @@
       	this.items=[];      	
         setTimeout(() => {
           this.$refs.my_scroller.finishPullToRefresh();	  
-	  location.reload();	
+	  window.location.reload();	
         }, 3000)
       }
     }

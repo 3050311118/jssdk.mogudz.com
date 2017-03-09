@@ -1,3 +1,6 @@
+<?php
+	echo $_GET["id"];
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>

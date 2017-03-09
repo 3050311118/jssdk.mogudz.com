@@ -1,21 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @3050311118
- Sign out
- Unwatch 1
-  Star 0
-  Fork 0 3050311118/panel.mogudz.com
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy pathpanel.mogudz.com/devlist.html
-a36a5ec  an hour ago
-@3050311118 3050311118 Create devlist.html
-1 contributor
-RawBlameHistory     
-129 lines (124 sloc)  3.06 KB
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -141,5 +123,3 @@ RawBlameHistory
 </script>
 </body>
 </html>
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help

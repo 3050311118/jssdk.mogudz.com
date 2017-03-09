@@ -66,7 +66,7 @@
 	var client;	
 	var message;
 	var isConnected=0;
-	var userid="<?php echo $_GET["id"];?>";
+ 	var userid="oHOgqwvXok5LsBNOOpV6jSZzX6Js";
 	function pub()
 	{
 	    message = new Paho.MQTT.Message('{"action":"GETONLINE"}');

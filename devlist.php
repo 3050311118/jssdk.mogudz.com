@@ -58,7 +58,7 @@
             ref="my_scroller" style="top: 44px;">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
     	<div v-if="index==0">点击打开设备页面</div>
-		<div :href="'http://jssdk.mogudz.com/detail.php?id=' +item.sn" v-else>序列号{{item.sn}} 设备名{{item.nickname}}</div>
+		<div {{item.sn | addurl}} v-else>序列号{{item.sn}} 设备名{{item.nickname}}</div>
         </div>
   </scroller>
 </div>
@@ -96,6 +96,9 @@
 	    }catch(e){
 	    }
 	}
+	Vue.filter('addurl', function (value) {
+		return "jssdk.mogudz.com/"+value;
+	})
   var app=new Vue({
     el: '#app',
     components: {
@@ -116,7 +119,7 @@
     methods: {
       refresh: function () {
 // 	mqtt();
-//       	this.items=[];      	
+//      this.items=[];      	
         setTimeout(() => {
           this.$refs.my_scroller.finishPullToRefresh();	  	
         }, 3000)

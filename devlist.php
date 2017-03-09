@@ -65,7 +65,7 @@
 <script>
 	var client;	
 	var message;
-	var userid=<?php echo "".$_GET["id"];?>;
+	var userid="<?php echo $_GET["id"];?>";
 	function pub()
 	{
 	    message = new Paho.MQTT.Message('{"action":"GETONLINE"}');
@@ -80,7 +80,7 @@
 	        client.onMessageArrived = onMessageArrived;
 	        client.connect({onSuccess:onConnect});
 	        function onConnect() {
-	            client.subscribe("oHOgqwvXok5LsBNOOpV6jSZzX6Js/PUB");
+	            client.subscribe(userid+"/PUB");
 	            pub(); 
 	        };
 	        function onConnectionLost(responseObject) {

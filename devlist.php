@@ -91,11 +91,12 @@
 	        };
 	        function onMessageArrived(message) {
 	            var str=message.payloadString;
-			alert(str);
 	            try{
 	            	var json=JSON.parse(str);
 	            	app.items.push(json);
+			    alert(str);
 	            }catch(e){
+			    alert("err");
 	            }
 	        };  
 	    }catch(e){

@@ -67,12 +67,7 @@
 	var message;
 	var isConnected=0;
  	var userid="<?php echo $_GET["id"];?>";
-	function pub()
-	{
-	    message = new Paho.MQTT.Message('{"action":"GETONLINE"}');
-	    message.destinationName = userid+"/SUB";
-	    client.send(message);  	
-	}
+
 	function mqtt(){ 
 	    try 
 	    {
@@ -82,8 +77,10 @@
 	        client.connect({onSuccess:onConnect});
 	        function onConnect() {
 	            client.subscribe(userid+"/PUB");
-	            pub(); 
 		    isConnected=1;
+		    message = new Paho.MQTT.Message('{"action":"GETONLINE"}');
+		    message.destinationName = userid+"/SUB";
+		    client.send(message);  
 	        };
 	        function onConnectionLost(responseObject) {
 	 	    isConnected=2;

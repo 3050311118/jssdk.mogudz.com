@@ -84,11 +84,9 @@
 	            client.subscribe(userid+"/PUB");
 	            pub(); 
 		    isConnected=1;
-		    alert("connected");
 	        };
 	        function onConnectionLost(responseObject) {
 	 	    isConnected=2;
-		    alert("disconnected");
 	        };
 	        function onMessageArrived(message) {
 	            var str=message.payloadString;
@@ -101,6 +99,7 @@
 	    }catch(e){
 	    }
 	}
+window.onload=function(){
   var app=new Vue({
     el: '#app',
     components: {
@@ -127,7 +126,7 @@
         }, 1500)
       }
     }
-  });
+  });}
 </script>
 </body>
 </html>

@@ -52,7 +52,7 @@
 <body>
 <div id="app">
   <div class="header">
-    <h1 class="title">下拉刷新列表</h1>
+    <h1 class="title" @click="mqttload">下拉刷新列表</h1>
   </div>
   <scroller :on-refresh="refresh"
             ref="my_scroller" style="top: 44px;">
@@ -114,6 +114,9 @@
       })
     },
     methods: {
+      mqttload:function(){
+       alert("mqttload");
+      },
       refresh: function () {
 	mqtt();
       	this.items=[];      	

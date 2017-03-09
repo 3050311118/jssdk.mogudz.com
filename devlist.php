@@ -93,6 +93,9 @@
 	            var str=message.payloadString;
 	            try{
 	            	var json=JSON.parse(str);
+			for(var item in app.items){
+				if(json === item) return;
+			}	
 	            	app.items.push(json);
 			    alert(str);
 	            }catch(e){
@@ -125,7 +128,6 @@
       },
       refresh: function () {
 // 	mqtt();
- 	this.items.length=0; 
         pub();             	
         setTimeout(() => {
           this.$refs.my_scroller.finishPullToRefresh();	  	

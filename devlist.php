@@ -57,7 +57,8 @@
   <scroller :on-refresh="refresh"
             ref="my_scroller" style="top: 44px;">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
-	     <div  @click="choose(item.sn)" >序列号{{item.sn}} 设备名{{item.nickname}}</div>
+	     <div v-if="index==0">点击打开设备页面</div>
+	     <div  @click="choose(item.sn)" v-else>序列号{{item.sn}} 设备名{{item.nickname}}</div>
         </div>
   </scroller>
 </div>
@@ -92,10 +93,10 @@
 	            var str=message.payloadString;
 	            try{
 	            	var json=JSON.parse(str);
-			    for(var i = 0; i < app.items.length; i++)
-			    {
-				if(app.items[i].sn == json.sn) return;
-			    }   
+// 			    for(var i = 0; i < app.items.length; i++)
+// 			    {
+// 				if(app.items[i].sn == json.sn) return;
+// 			    }   
 	            	app.items.push(json);
 	            }catch(e){
 	            }
@@ -122,6 +123,7 @@
 	   window.location.href="/devinfo.php?id="+index;
       },
       refresh: function () {
+	this.items[0]={"sn":"","nickname":""};
         pub();             	
         setTimeout(() => {
           this.$refs.my_scroller.finishPullToRefresh();	  	

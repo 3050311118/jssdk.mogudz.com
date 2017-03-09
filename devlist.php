@@ -116,6 +116,7 @@
     methods: {
       choose:function(index){
 	   alert(""+index);
+	   window.location.href="jssdk.mogudz.com/details.php?id="+index;
       },
       refresh: function () {
 // 	mqtt();

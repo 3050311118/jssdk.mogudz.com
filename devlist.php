@@ -70,7 +70,6 @@
 	
 	function pub(){
 		client.send(message);  
-		alert("pub");
 	}
 
 	function mqtt(){ 
@@ -92,6 +91,7 @@
 	        };
 	        function onMessageArrived(message) {
 	            var str=message.payloadString;
+			alert(str);
 	            try{
 	            	var json=JSON.parse(str);
 	            	app.items.push(json);

@@ -84,6 +84,7 @@
 	        function onConnect() {
 	            client.subscribe(userid+"/PUB");
 		    isConnected=1;
+		    pub();
 	        };
 	        function onConnectionLost(responseObject) {
 	 	    isConnected=2;

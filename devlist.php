@@ -57,8 +57,8 @@
   <scroller :on-refresh="refresh"
             ref="my_scroller" style="top: 44px;">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
-    	<div v-if="index==0">点击打开设备页面</div>
-	     <div  @click="choose($index)" v-else>序列号{{item.sn}} 设备名{{item.nickname}}</div>
+    	<li v-if="index==0">点击打开设备页面</li>
+	     <li  @click="choose($index)" v-else>序列号{{item.sn}} 设备名{{item.nickname}}</li>
         </div>
   </scroller>
 </div>

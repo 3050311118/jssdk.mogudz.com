@@ -70,6 +70,7 @@
 	
 	function pub(){
 		client.send(message);  
+		alert("pub");
 	}
 
 	function mqtt(){ 

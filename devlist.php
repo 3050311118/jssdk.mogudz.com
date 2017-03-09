@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -114,8 +114,8 @@
     },
     methods: {
       refresh: function () {
-      	this.items=[];
-      	mqtt();
+	mqtt();
+      	this.items=[];      	
         setTimeout(() => {
           this.$refs.my_scroller.finishPullToRefresh();
         }, 1500)

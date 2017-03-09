@@ -57,7 +57,6 @@
   <scroller :on-refresh="refresh"
             ref="my_scroller" style="top: 44px;">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
-<!--     	<div v-if="index==0">点击打开设备页面</div> v-else-->
 	     <div  @click="choose(item.sn)" >序列号{{item.sn}} 设备名{{item.nickname}}</div>
         </div>
   </scroller>
@@ -98,9 +97,7 @@
 				if(app.items[i].sn == json.sn) return;
 			    }   
 	            	app.items.push(json);
-			    alert(str);
 	            }catch(e){
-			    alert("err");
 	            }
 	        };  
 	    }catch(e){
@@ -116,9 +113,6 @@
     },
     mounted: function () {
       mqtt(); 
-//       setInterval(function(){
-// 	 if(isConnected===2)mqtt();
-//       },5000);
       setTimeout(() => {
         this.$refs.my_scroller.resize();
       })
@@ -128,7 +122,6 @@
 	   window.location.href="/devinfo.php?id="+index;
       },
       refresh: function () {
-// 	mqtt();
         pub();             	
         setTimeout(() => {
           this.$refs.my_scroller.finishPullToRefresh();	  	

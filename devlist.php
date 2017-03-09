@@ -1,6 +1,3 @@
-<?php
-	echo $_GET["id"];
-?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -68,7 +65,7 @@
 <script>
 	var client;	
 	var message;
-	var userid="oHOgqwvXok5LsBNOOpV6jSZzX6Js";
+	var userid=<?php echo $_GET["id"];?>;
 	function pub()
 	{
 	    message = new Paho.MQTT.Message('{"action":"GETONLINE"}');

@@ -58,7 +58,7 @@
             ref="my_scroller" style="top: 44px;">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
 	     <div v-if="index==0">点击打开设备页面 </div>
-	     <div  @click="choose(item.sn)" v-else>序列号{{item.sn}} 设备名{{item.nickname}}</div>
+	     <div v-else><button @click="info(item.sn)" value="查看配置"><button @click="data(item.sn)" value="查看数据">序列号{{item.sn}} 设备名{{item.nickname}}</div>
         </div>
   </scroller>
 </div>
@@ -117,8 +117,11 @@
       })
     },
     methods: {
-      choose:function(index){
+      info:function(index){
 	   window.location.href="/devinfo.php?id="+index;
+      },
+      data:function(index){
+	   window.location.href="/devdata.php?id="+index;
       },
       refresh: function () {
 	this.items=[];

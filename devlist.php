@@ -90,8 +90,8 @@
 	 	    isConnected=2;
 	        };
 	        function onMessageArrived(message) {
-	            var str=message.payloadString;
 	            try{
+			var str=message.payloadString;
 	            	var json=JSON.parse(str);
 			app.items.push(json);
 // 			if(app.items.length===1) app.items[0]=json;

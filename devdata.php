@@ -62,7 +62,7 @@
 	function mqtt(){ 
 	    try 
 	    {	
-	        message = new Paho.MQTT.Message('{"action":"GETINFO"}');
+	        message = new Paho.MQTT.Message('{"action":"GETPARA"}');
       		message.destinationName = userid+"/SUB";
 	        client = new Paho.MQTT.Client(location.hostname, 8083, "WEB"+userid);//
 	        client.onConnectionLost = onConnectionLost;
@@ -77,18 +77,12 @@
 	 	         isConnected=2;
 	        };
 	        function onMessageArrived(message) {  	
-	            try{
-			var str=message.payloadString;
-	            	var json=JSON.parse(str);
-			    app.isdhcp=json.isDhcp;
-			    app.mode=json.mode;
-			    app.staip=json.staip;
-			    app.stagateway=json.stagateway;
-			    app.stanetmask=json.stanetmask;
-			    app.stadns=json.stadns;
-			    app.apip=json.apip;
-	            }catch(e){	
-            	    }
+                    try{
+                        var payload = message.payloadBytes;
+                        var data = new Uint16Array(payload);
+                        alert(data[0])
+                    }catch(e){
+                    }
 	        };  
 	    }catch(e){
 	    }

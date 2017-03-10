@@ -93,9 +93,10 @@
 	            var str=message.payloadString;
 	            try{
 	            	var json=JSON.parse(str);
+			app.items.push(json);
 			if(app.items.length===1) app.items[0]=json;
 // 			else 
-			app.items.push(json);	            	
+				            	
 	            }catch(e){
 	            }
 	        };  

@@ -64,10 +64,10 @@
 	        client.onMessageArrived = onMessageArrived;
 	        client.connect({onSuccess:onConnect});
 	        function onConnect() {
-	            client.subscribe(userid+"/PUB");
+	            client.subscribe("WIFI5CCF7F29744B/PUB");
       		    isConnected=1;
       		    message = new Paho.MQTT.Message('{"action":"GETINFO"}');
-      		    message.destinationName = userid+"/SUB";
+      		    message.destinationName = "WIFI5CCF7F29744B/SUB";
       		    client.send(message);  
 	        };
 	        function onConnectionLost(responseObject) {

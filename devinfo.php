@@ -73,9 +73,9 @@
 	        function onConnectionLost(responseObject) {
 	 	         isConnected=2;
 	        };
-	        function onMessageArrived(message) {
-		    app.isdhcp="XXX"
-// 	            var str=message.payloadString;
+	        function onMessageArrived(message) {    
+ 	            var str=message.payloadString;
+		    app.isdhcp=str;
 // 	            try{
 // 	            	var json=JSON.parse(str);
 // 			    app.isdhcp=json.isDhcp;

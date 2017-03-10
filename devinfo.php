@@ -77,8 +77,7 @@
 	        function onConnectionLost(responseObject) {
 	 	         isConnected=2;
 	        };
-	        function onMessageArrived(message) {  
-			
+	        function onMessageArrived(message) {  	
 	            try{
 			var str=message.payloadString;
 	            	var json=JSON.parse(str);
@@ -89,9 +88,8 @@
 			    app.stanetmask=json.stanetmask;
 			    app.stadns=json.stadns;
 			    app.apip=json.apip;
-	            }catch(e){
-			    alert(e)	
-            }
+	            }catch(e){	
+            	    }
 	        };  
 	    }catch(e){
 	    }
@@ -99,13 +97,13 @@
   var app=new Vue({
     el: '#app',
     data: {
-	isdhcp:'1',
-	mode:'1',
-	staip:'192.168.1.1',
-	stagateway:'192.168.1.1',
-	stanetmask:'192.168.1.1',
-	stadns:'192.168.1.1',
-	apip:'192.168.1.1'
+	isdhcp:'',
+	mode:'',
+	staip:'',
+	stagateway:'',
+	stanetmask:'',
+	stadns:'',
+	apip:''
     },
     mounted: function () {
       mqtt(); 

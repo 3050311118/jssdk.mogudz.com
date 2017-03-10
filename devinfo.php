@@ -54,7 +54,7 @@
 	var client;	
 	var message;
 	var isConnected=0;
- 	var userid="WIFI5CCF7F29744B";
+ 	var userid="<?php echo $_GET["id"];?>";  
 
 	function mqtt(){ 
 	    try 

@@ -74,7 +74,7 @@
 	 	         isConnected=2;
 	        };
 	        function onMessageArrived(message) {   
-		    alert(message);
+		    alert(message.payloadString);
 //  	            var str=message.payloadString;
 // 	            try{
 // 	            	var json=JSON.parse(str);

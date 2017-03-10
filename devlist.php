@@ -57,8 +57,8 @@
   <scroller :on-refresh="refresh"
             ref="my_scroller" style="top: 44px;">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
-<!-- 	     <div v-if="index==0">点击打开设备页面 v-else</div> -->
-	     <div  @click="choose(item.sn)">序列号{{item.sn}} 设备名{{item.nickname}}</div>
+	     <div v-if="index==0">点击打开设备页面 </div>
+	     <div  @click="choose(item.sn)" v-else>序列号{{item.sn}} 设备名{{item.nickname}}</div>
         </div>
   </scroller>
 </div>
@@ -94,9 +94,8 @@
 	            try{
 	            	var json=JSON.parse(str);
 			app.items.push(json);
-			if(app.items.length===1) app.items[0]=json;
-// 			else 
-				            	
+// 			if(app.items.length===1) app.items[0]=json;
+// 			else 	            	
 	            }catch(e){
 	            }
 	        };  

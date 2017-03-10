@@ -69,7 +69,7 @@
  	var userid="<?php echo $_GET["id"];?>";
 	
 	function pub(){
-		client.send(message);  
+	 	client.send(message);  
 	}
 
 	function mqtt(){ 
@@ -93,11 +93,8 @@
 	            var str=message.payloadString;
 	            try{
 	            	var json=JSON.parse(str);
-// 			    for(var i = 0; i < app.items.length; i++)
-// 			    {
-// 				if(app.items[i].sn == json.sn) return;
-// 			    }   
-	            	app.items.push(json);
+			if(app.items.length===1) app.items[0]=json;
+			else app.items.push(json);	            	
 	            }catch(e){
 	            }
 	        };  

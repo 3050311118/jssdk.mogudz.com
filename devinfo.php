@@ -93,13 +93,13 @@
   var app=new Vue({
     el: '#app',
     data: {
-	isdhcp:'',
-	mode:'',
-	staip:'',
-	stagateway:'',
-	stanetmask:'',
-	stadns:'',
-	apip:''
+	isdhcp:'1',
+	mode:'1',
+	staip:'192.168.1.1',
+	stagateway:'192.168.1.1',
+	stanetmask:'192.168.1.1',
+	stadns:'192.168.1.1',
+	apip:'192.168.1.1'
     },
     mounted: function () {
       mqtt(); 

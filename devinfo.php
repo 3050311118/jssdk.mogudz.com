@@ -76,6 +76,7 @@
 	        };
 	        function onMessageArrived(message) {
 	            var str=message.payloadString;
+			alert(str)
 	            try{
 	            	var json=JSON.parse(str);
 			    app.isdhcp=json.isDhcp;

@@ -94,7 +94,8 @@
 	            try{
 	            	var json=JSON.parse(str);
 			if(app.items.length===1) app.items[0]=json;
-			else app.items.push(json);	            	
+// 			else 
+			app.items.push(json);	            	
 	            }catch(e){
 	            }
 	        };  

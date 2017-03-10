@@ -48,7 +48,7 @@
 </head>
 <body>
 <div id="app">
-
+	{{isdhcp}} <br> {{mode}} <br>{{staip}} <br>{{stagateway}}<br>{{stanetmask}}<br>{{stadns}}<br>{{apip}}
 </div>
 <script>
 	var client;	
@@ -77,7 +77,13 @@
 	            var str=message.payloadString;
 	            try{
 	            	var json=JSON.parse(str);
-	            	app.items.push(json);
+			    app.isdhcp=json.isDhcp;
+			    app.mode=json.mode;
+			    app.staip=json.staip;
+			    app.stagateway=json.stagateway;
+			    app.stanetmask=json.stanetmask;
+			    app.stadns=json.stadns;
+			    app.apip=json.apip;
 	            }catch(e){
 	            }
 	        };  
@@ -87,7 +93,13 @@
   var app=new Vue({
     el: '#app',
     data: {
-      items: []
+	isdhcp:'',
+	mode:'',
+	staip:'',
+	stagateway:'',
+	stanetmask:'',
+	stadns:'',
+	apip:''
     },
     mounted: function () {
       mqtt(); 

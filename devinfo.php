@@ -78,8 +78,9 @@
 	 	         isConnected=2;
 	        };
 	        function onMessageArrived(message) {  
-			var str=message.payloadString;
+			
 	            try{
+			var str=message.payloadString;
 	            	var json=JSON.parse(str);
 			    app.isdhcp=json.isDhcp;
 			    app.mode=json.mode;
@@ -89,7 +90,8 @@
 			    app.stadns=json.stadns;
 			    app.apip=json.apip;
 	            }catch(e){
-	            }
+			    alert(e)	
+            }
 	        };  
 	    }catch(e){
 	    }

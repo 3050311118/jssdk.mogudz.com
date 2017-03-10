@@ -60,7 +60,7 @@
 	     <div v-if="index==0">点击打开设备页面 </div>
 	     <div v-else><button @click="info(item.sn)" type="button">查看配置</button><br>
 		     <button @click="data(item.sn)" type="button">查看数据</button><br>
-		     <button @click="real(item.sn)" type="button">实时数据<br>序列号{{item.sn}} 设备名{{item.nickname}}</div>
+		     <button @click="real(item.sn)" type="button">实时数据</button><br>序列号{{item.sn}} 设备名{{item.nickname}}</div>
         </div>
   </scroller>
 </div>

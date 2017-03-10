@@ -89,7 +89,6 @@
 			    app.stadns=json.stadns;
 			    app.apip=json.apip;
 	            }catch(e){
-			 alert(e)
 	            }
 	        };  
 	    }catch(e){

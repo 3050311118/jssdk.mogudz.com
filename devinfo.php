@@ -74,19 +74,19 @@
 	 	         isConnected=2;
 	        };
 	        function onMessageArrived(message) {   
-		    alert(typeof message.payloadString);
-//  	            var str=message.payloadString;
-// 	            try{
-// 	            	var json=JSON.parse(str);
-// 			    app.isdhcp=json.isDhcp;
-// 			    app.mode=json.mode;
-// 			    app.staip=json.staip;
-// 			    app.stagateway=json.stagateway;
-// 			    app.stanetmask=json.stanetmask;
-// 			    app.stadns=json.stadns;
-// 			    app.apip=json.apip;
-// 	            }catch(e){
-// 	            }
+ 	            var str=message.payloadString;
+	            try{
+	            	var json=JSON.parse(str);
+			    app.isdhcp=json.isDhcp;
+			    app.mode=json.mode;
+			    app.staip=json.staip;
+			    app.stagateway=json.stagateway;
+			    app.stanetmask=json.stanetmask;
+			    app.stadns=json.stadns;
+			    app.apip=json.apip;
+	            }catch(e){
+			 alert(e)
+	            }
 	        };  
 	    }catch(e){
 	    }

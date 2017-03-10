@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -77,9 +77,9 @@
 	        function onConnectionLost(responseObject) {
 	 	         isConnected=2;
 	        };
-	        function onMessageArrived(message) {     
-	            try{
+	        function onMessageArrived(message) {  
 			var str=message.payloadString;
+	            try{
 	            	var json=JSON.parse(str);
 			    app.isdhcp=json.isDhcp;
 			    app.mode=json.mode;

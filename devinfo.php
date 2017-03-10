@@ -64,17 +64,17 @@
 	        client.onMessageArrived = onMessageArrived;
 	        client.connect({onSuccess:onConnect});
 	        function onConnect() {
-	            client.subscribe("WIFI5CCF7F29744B/PUB");
+	            client.subscribe(userid+"/PUB");
       		    isConnected=1;
       		    message = new Paho.MQTT.Message('{"action":"GETINFO"}');
-      		    message.destinationName = "WIFI5CCF7F29744B/SUB";
+      		    message.destinationName = userid+"/SUB";
       		    client.send(message);  
 	        };
 	        function onConnectionLost(responseObject) {
 	 	         isConnected=2;
 	        };
 	        function onMessageArrived(message) {
-		    app.isdhcp="SSSS"
+		    app.isdhcp="XXX"
 // 	            var str=message.payloadString;
 // 	            try{
 // 	            	var json=JSON.parse(str);

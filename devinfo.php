@@ -75,7 +75,7 @@
 	        };
 	        function onMessageArrived(message) {    
  	            var str=message.payloadString;
-		    app.isdhcp=str;
+		    app.isdhcp="1234";
 // 	            try{
 // 	            	var json=JSON.parse(str);
 // 			    app.isdhcp=json.isDhcp;
